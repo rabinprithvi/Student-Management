@@ -1,0 +1,45 @@
+
+<%= link_to "Home" , administrator_path %></br>
+
+<div id=notice><h3><%= flash[:notice]%></h3></div>
+
+<p><b>Student Enrollment Form</b><p>
+
+<%= form_for @student, :url => { :action => "create" } do |f| %>
+	 
+   <p>
+    <%= f.label :name %> </br>
+    <%= f.text_field :name %> 
+   </p>
+  
+  <p>
+     <%= f.label :classroom %> </br>
+       <%= f.select :classroom, [1, 2 ,3] %>
+  
+  <p>
+     <%= f.label :dob %></br>
+     <%= f.date_select :dob %>
+  </p>
+ 
+
+   <p>
+    <%= f.label :gender %></br>
+    <%= f.radio_button :gender, 'm' , :checked => 'checked' %> m
+    <%= f.radio_button :gender, 'f' %> f 
+   </p>
+  
+  <p>
+    <%= f.label :religion %> </br>
+    <%= f.select :religion ,['Hindu' , 'Muslim' , 'Christain'] %> 
+  </p>
+
+  <p>
+    <%= f.label :address %></br>
+    <%= f.text_field :address %> 
+  </p>
+
+  <p>
+     <%= f.submit "Create" %>
+  </p>
+
+<% end %>

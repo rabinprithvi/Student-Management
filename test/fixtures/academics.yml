@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  student_id: 1
+  sub1: 1
+  sub2: 1
+  sub3: 1
+  sub4: 1
+  sub5: 1
+  total: 1
+  rank: 1
+  term: MyString
+
+two:
+  student_id: 1
+  sub1: 1
+  sub2: 1
+  sub3: 1
+  sub4: 1
+  sub5: 1
+  total: 1
+  rank: 1
+  term: MyString

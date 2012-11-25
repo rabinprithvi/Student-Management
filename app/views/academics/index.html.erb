@@ -1,0 +1,87 @@
+<%= link_to "Home" , administrator_path %></br>
+
+<p><h2>Students Academic details </h2></p>
+
+<%= flash[:notice] %>
+        
+
+<p>
+	<%= form_tag(academics_path, :method => "get") do %>
+    <%= select_tag(:class ,options_for_select([[1, 1], [2, 2], [3, 3]],@class),
+          :onchange => 'this.form.submit()') %>
+	   <%= select_tag(:terms ,options_for_select([['Quarterly', 1], ['Half yearly', 2], ['Annualy', 3]],@term ),
+					:onchange => 'this.form.submit()') %>
+  
+	<% end %>
+</p>
+
+<div id="academics">
+
+ <table>
+  	<tr>
+  		<th>Name</th>
+  		<th>sub1</th>
+  		<th>sub2</th>
+  		<th>sub3</th>
+  		<th>sub4</th>
+  		<th>sub5</th>
+  		<th>total</th>
+  		<th>rank</th>
+  		
+  <% @academics.each do |academic| %>
+
+ 
+  	</tr>
+
+  	<tr>
+  		<td>
+    		<%= academic.student.name %>
+    	</td>
+
+    	<td>
+    		<%= academic.sub1 %>
+    	</td>
+
+    	<td>
+    		<%= academic.sub2 %>
+    	</td>
+   
+    	<td>
+    		<%= academic.sub3 %>
+    	</td>
+   			
+   		<td>
+   			<%= academic.sub4 %>
+    	</td>
+    		
+    	<td>
+    		<%= academic.sub5 %>
+    	</td>
+			
+		<td>
+			<%= academic.total %>
+    	</td>
+			
+		<td>
+			<%= academic.rank %>
+    </td>
+
+    <td>
+      <%= link_to "Edit" ,  edit_academic_path(academic)%>
+    </td>
+
+    <td>
+      <%= link_to "Delete", academic, :confirm => 'Are you sure ?', :method => :delete %>
+    </td>
+      
+			
+    </tr>
+
+  <% end %>
+
+</table
+</div>
+
+<p>
+	<%= will_paginate (@academics)  %>
+</p>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  classroom: 1
+  dob: 2012-11-22 07:28:36
+  gender: MyString
+  religion: MyString
+  address: MyString
+
+two:
+  name: MyString
+  classroom: 1
+  dob: 2012-11-22 07:28:36
+  gender: MyString
+  religion: MyString
+  address: MyString
