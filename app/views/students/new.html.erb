@@ -1,5 +1,10 @@
 
-<%= link_to "Home" , administrator_path %></br>
+
+<div id="logout" > <%= link_to "Home" , administrator_path %>>><%= link_to "Logout" , root_url %> </div>
+
+<div id="student_new">
+
+
 
 <div id=notice><h3><%= flash[:notice]%></h3></div>
 
@@ -8,28 +13,28 @@
 <%= form_for @student, :url => { :action => "create" } do |f| %>
 	 
    <p>
-    <%= f.label :name %> </br>
+    <%= f.label :name %> 
     <%= f.text_field :name %> 
    </p>
   
   <p>
-     <%= f.label :classroom %> </br>
+     <%= f.label :classroom %> 
        <%= f.select :classroom, [1, 2 ] %>
   
   <p>
-     <%= f.label :dob %></br>
+     <%= f.label :dob %>
      <%= f.date_select :dob %>
   </p>
  
 
    <p>
-    <%= f.label :gender %></br>
+    <%= f.label :gender %>
     <%= f.radio_button :gender, 'm' , :checked => 'checked' %> m
     <%= f.radio_button :gender, 'f' %> f 
    </p>
   
   <p>
-    <%= f.label :religion %> </br>
+    <%= f.label :religion %> 
     <%= f.select :religion ,['Hindu' , 'Muslim' , 'Christain'] %> 
   </p>
 
@@ -43,3 +48,5 @@
   </p>
 
 <% end %>
+
+</div>

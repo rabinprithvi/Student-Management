@@ -6,20 +6,23 @@
 
   <title>Student Management</title>
 
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+   <%= javascript_include_tag "application" %>
 
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "application", :media => "all" %> 
 
   <%= csrf_meta_tags %>
 
 </head>
 
+
+
 <body>
 		
 		
-		<%= link_to "Logout" , root_url %> 
+		<div id="bodys">
+			<%= yield %>
 		
-		<%= yield %>
+		</div >
 </body>
 
 </html>

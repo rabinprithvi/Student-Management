@@ -12,3 +12,64 @@
  *= require_tree .
  */
 /* START:notice */
+body
+	{
+		margin:100px;
+		padding:20px;		
+		background:#272727; 
+		color:#565656;
+		font-family:Verdana,Arial,sans-serif;
+		font-size:14px;
+		
+	}
+
+	#bodys
+	{
+		width:600px;
+		height:600px;
+		margin:0 auto;
+		background:url(images/head_bg.png) no-repeat 0 0 #FFF;
+		border-radius:20px 20px 20px 20px;
+	}
+
+	#logout
+	{
+		padding:10px 475px 0px;		
+	}
+
+
+
+	#login
+	{
+		padding:100px 100px;				
+	}
+
+	#welcome
+	{
+		padding:100px 100px 100px;		
+		margin:0 auto;
+	}
+
+	#student_new 
+	{
+		padding:40px 100px;		
+		margin:0 auto;
+	}
+
+	#academic_new 
+	{
+		padding:40px 100px;		
+		margin:0 auto;
+	}
+
+	#academic_edit
+	{
+		padding:40px 100px;		
+		margin:0 auto;
+	}
+
+	#academic_index 
+	{
+		padding:40px 100px;		
+		margin:0 auto;
+	}

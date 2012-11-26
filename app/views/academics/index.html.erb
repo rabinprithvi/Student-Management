@@ -1,3 +1,5 @@
+<div id="logout"> <%= link_to "Logout" , root_url %> </div>
+
 <%= link_to "Home" , administrator_path %></br>
 
 <p><h2>Students Academic details </h2></p>
@@ -15,73 +17,12 @@
 	<% end %>
 </p>
 
-<div id="academics">
-
- <table>
-  	<tr>
-  		<th>Name</th>
-  		<th>sub1</th>
-  		<th>sub2</th>
-  		<th>sub3</th>
-  		<th>sub4</th>
-  		<th>sub5</th>
-  		<th>total</th>
-  		<th>rank</th>
-  		
-  <% @academics.each do |academic| %>
-
- 
-  	</tr>
-
-  	<tr>
-  		<td>
-    		<%= academic.student.name %>
-    	</td>
-
-    	<td>
-    		<%= academic.sub1 %>
-    	</td>
-
-    	<td>
-    		<%= academic.sub2 %>
-    	</td>
-   
-    	<td>
-    		<%= academic.sub3 %>
-    	</td>
-   			
-   		<td>
-   			<%= academic.sub4 %>
-    	</td>
-    		
-    	<td>
-    		<%= academic.sub5 %>
-    	</td>
-			
-		<td>
-			<%= academic.total %>
-    	</td>
-			
-		<td>
-			<%= academic.rank %>
-    </td>
-
-    <td>
-      <%= link_to "Edit" ,  edit_student_path(academic.student)%>
-    </td>
-
-    <td>
-      <%= link_to "Delete", academic.student, :confirm => 'Are you sure to delete '  + academic.student.name + ' ? ' , :method => :delete %>
-    </td>
-      
-			
-    </tr>
-
-  <% end %>
-
-</table
-</div>
+<div id="academics"> <%= render 'academics' %></div>
 
 <p>
 	<%= will_paginate (@academics)  %>
 </p>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.pagination a').attr('data-remote', 'true');
+});</script>
