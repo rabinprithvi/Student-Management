@@ -73,3 +73,8 @@ body
 		padding:40px 100px;		
 		margin:0 auto;
 	}
+
+	#notice
+	{
+		color:#ff0000;
+	}

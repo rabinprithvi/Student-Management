@@ -8,7 +8,7 @@ class StudentsController < ApplicationController
   		flash[:notice] = "Student record saved successfully. Please enter a new record"
   		redirect_to new_student_path
   	else
-  		flash[:notice] = "Unable to save student. Please check name and address."
+  		flash[:notice] = "Unable to save. Please check all details."
       redirect_to new_student_path
     
   	end

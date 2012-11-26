@@ -1,6 +1,7 @@
-<div id="logout"> <%= link_to "Logout" , root_url %> </div>
+<div id="logout" > <%= link_to "Home" , administrator_path %>>><%= link_to "Logout" , root_url %> </div>
 
-<%= link_to "Home" , administrator_path %></br>
+<div id="academic_index">
+
 
 <p><h2>Students Academic details </h2></p>
 
@@ -22,6 +23,9 @@
 <p>
 	<%= will_paginate (@academics)  %>
 </p>
+
+</div>
+
 <script type="text/javascript">
 $(document).ready(function() {
     $('.pagination a').attr('data-remote', 'true');
