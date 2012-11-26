@@ -1,13 +1,10 @@
 <%= link_to "Home" , administrator_path %></br>
 
-<p>Edit  acacademic path </p>
+<p>Edit Student Marks </p>
 
 <%= form_for @academic, :url => { :action => "update" } do |f| %>
 	   
-     <p>
-    	<%= f.label :name %> </br>
-    	<%= f.select :student_id, options_from_collection_for_select(@students, "id", "name") %>
-   </p>
+     
 
  	<p>
       <%= f.label :term %> </br>

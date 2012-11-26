@@ -17,4 +17,25 @@ class StudentsController < ApplicationController
   def new
   	@student = Student.new
   end
+
+  def edit
+    @student = Student.find(params[:id])
+    
+  end
+
+  def update
+   student = Student.find(params[:id])
+    if student.update_attributes(params[:student])
+      flash[:notice] =  "Academic updated successfully"
+      redirect_to academics_path
+    end
+  end
+
+  def destroy
+    student = Student.find(params[:id])
+    student.destroy 
+    flash[:notice] = "Student academic record deleted successfully"
+    redirect_to academics_path
+  end
+
 end

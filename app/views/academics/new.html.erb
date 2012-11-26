@@ -8,7 +8,7 @@
 
 
   <%= form_tag(new_academic_path, :method => "get") do %>
-  <%= select_tag(:class ,options_for_select([[1, 1], [2, 2], [3, 3]],@class),
+  <%= select_tag(:class ,options_for_select([[1, 1], [2, 2]],@class),
           :onchange => 'this.form.submit()') %>
           <% end %>
 

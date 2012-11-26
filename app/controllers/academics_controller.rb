@@ -88,9 +88,7 @@ class AcademicsController < ApplicationController
       if p == '1'
         term = 1
       elsif p == '2'
-        term = 2
-      else
-        term = 3
+        term = 2      
       end
   end
 

@@ -7,7 +7,7 @@
 
 <p>
 	<%= form_tag(academics_path, :method => "get") do %>
-    <%= select_tag(:class ,options_for_select([[1, 1], [2, 2], [3, 3]],@class),
+    <%= select_tag(:class ,options_for_select([[1, 1], [2, 2]],@class),
           :onchange => 'this.form.submit()') %>
 	   <%= select_tag(:terms ,options_for_select([['Quarterly', 1], ['Half yearly', 2], ['Annualy', 3]],@term ),
 					:onchange => 'this.form.submit()') %>
@@ -67,11 +67,11 @@
     </td>
 
     <td>
-      <%= link_to "Edit" ,  edit_academic_path(academic)%>
+      <%= link_to "Edit" ,  edit_student_path(academic.student)%>
     </td>
 
     <td>
-      <%= link_to "Delete", academic, :confirm => 'Are you sure ?', :method => :delete %>
+      <%= link_to "Delete", academic.student, :confirm => 'Are you sure to delete '  + academic.student.name + ' ? ' , :method => :delete %>
     </td>
       
 			

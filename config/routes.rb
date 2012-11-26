@@ -1,20 +1,23 @@
 StudentManagement::Application.routes.draw do
 
   
-
+ 
   resources :students
 
   resources :academics
 
  
+  
 
   get "login/index"
+
+  match 'admin' => 'login#authenticate' , :as => :authenticate
 
   match 'school' => 'login#admin'  , :as => :administrator
 
   match 'all' => 'academics#index'  , :as => :academics 
 
-  match 'school' => 'login#authenticate' , :as => :authenticate
+ 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
