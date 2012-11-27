@@ -1,9 +1,15 @@
+<div id="logout" > <%= link_to "Home" , administrator_path %>>><%= link_to "Logout" , root_url %> </div>
 
-<%= link_to "Home" , administrator_path %></br>
 
-<div id=notice><h3><%= flash[:notice]%></h3></div>
+<div id="student_edit">
 
-<p><b>Student Enrollment Form</b><p>
+
+
+<div id="notice"><h3><%= flash[:notice]%></h3></div>
+
+<div id="error"><h3><%= flash[:error]%></h3></div>
+
+<p><b>Edit Student Details</b><p>
 
 <%= form_for @student, :url => { :action => "update" } do |f| %>
 	 
@@ -43,3 +49,5 @@
   </p>
 
 <% end %>
+
+</div>

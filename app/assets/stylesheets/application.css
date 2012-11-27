@@ -62,7 +62,7 @@ body
 		margin:0 auto;
 	}
 
-	#academic_edit
+	#student_edit
 	{
 		padding:40px 100px;		
 		margin:0 auto;
@@ -75,6 +75,11 @@ body
 	}
 
 	#notice
+	{
+		color:#186E02;
+	}
+
+	#error
 	{
 		color:#ff0000;
 	}

@@ -29,11 +29,11 @@ class AcademicsController < ApplicationController
   def create
   	@academic = Academic.create(params[:academic])
   	if  @academic.save
-  		flash[:notice] = "Student academic record saved successfully. Please enter another record"
+  		flash[:notice] = "Student academic record saved successfully."
   		redirect_to new_academic_path
    
   	else
-  		flash[:notice] = "Unable to save. Please check rank and total."
+  		flash[:error] = "Unable to save. Please check rank and total."
   		redirect_to new_academic_path
   	end
   end
@@ -48,7 +48,12 @@ class AcademicsController < ApplicationController
     if academic.update_attributes(params[:academic])
       flash[:notice] =  "Academic updated successfully"
       render 'login/admin'
+    else
+      flash[:error] = "Unable to update. Please check rank and total."
+      render(:back)
     end
+  else
+
   end
 
   def destroy

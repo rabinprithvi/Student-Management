@@ -5,10 +5,10 @@ class StudentsController < ApplicationController
   def create
   	@student = Student.new(params[:student])
   	if @student.save
-  		flash[:notice] = "Student record saved successfully. Please enter a new record"
+  		flash[:notice] = "Student record saved successfully."
   		redirect_to new_student_path
   	else
-  		flash[:notice] = "Unable to save. Please check all details."
+  		flash[:error] = "Unable to save. Please check all details."
       redirect_to new_student_path
     
   	end
@@ -24,10 +24,13 @@ class StudentsController < ApplicationController
   end
 
   def update
-   student = Student.find(params[:id])
-    if student.update_attributes(params[:student])
+   @student = Student.find(params[:id])
+    if @student.update_attributes(params[:student])
       flash[:notice] =  "Academic updated successfully"
       redirect_to academics_path
+    else
+      flash[:error] = "Unable to update. Please check all details."
+      redirect_to edit_student_path  @student
     end
   end
 

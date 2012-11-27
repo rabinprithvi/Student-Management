@@ -1,13 +1,16 @@
 
 <div id="login">
-<h1>Admin Login </h1>
+
+<h1>Student Management</h1>
+
+
 
 <div id="notice"><h3><%= flash[:notice]  %></h3></div>
 
 <%= form_tag(authenticate_path, :method => "post") do %>
 
 	<p>
-		<%= label_tag(:q, "Usernames:") %>
+		<%= label_tag(:q, "Username:") %>
   		<%= text_field_tag(:uname) %>
 	</p>
     
@@ -19,6 +22,9 @@
     <p>
     	<%= submit_tag("Login") %>
     </p>
+
+    <p> Hint : Username -  admin &  Password - 123</p>
+
   
   
 <% end %>
